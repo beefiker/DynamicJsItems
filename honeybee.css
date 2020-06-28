@@ -1,0 +1,305 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: "Monsterrat", "Jeju Gothic", serif;
+	font-weight: Medium;
+	font-size: 15px;
+	text-decoration: none;
+}
+body {
+	background-color: #131313;
+}
+
+.box {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.box:nth-child(odd) {
+	background-color: #242424;
+	color: #f9c901;
+}
+.box:nth-child(even) {
+	background-color: #f9c901;
+	color: #242424;
+}
+
+/*큰버전 브라우저 크기 최소 1000px 이상*/
+@media (min-width: 1300px) {
+	#container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	#Topmenu {
+		position: fixed;
+		width: 100%;
+		height: 100px;
+		background-color: #131313;
+		display: grid;
+		grid-template-rows: minmax(1fr, 100%);
+		grid-template-columns: repeat(6, minmax(1fr, 100%));
+		grid-template-areas: "logo logo menu menu menu menu";
+	}
+
+	.menuDesign {
+		cursor: pointer;
+		width: 20%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.2rem;
+		color: white;
+	}
+
+	#logoImg {
+		grid-area: logo;
+		height: 100%;
+		text-align: center;
+		color: white;
+		letter-spacing: 1vw;
+		font-weight: bold;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	strong {
+		font-size: 3rem;
+	}
+	#menuWrapper {
+		grid-area: menu;
+		display: flex;
+	}
+	#navi {
+		display: none;
+	}
+
+	footer {
+		width: 100%;
+		height: 200px;
+		background-color: #f9c901;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	footer p {
+		font-size: 5rem;
+	}
+}
+/* 중간 버전 */
+
+@media (max-width: 1300px) {
+	#container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	#Topmenu {
+		position: fixed;
+		width: 100%;
+		height: 90px;
+		background-color: #131313;
+		display: grid;
+		grid-template-rows: repeat(2, minmax(1fr, 100%));
+		grid-template-columns: 100%;
+		grid-template-areas: "logo" "menu";
+	}
+
+	.menuDesign {
+		cursor: pointer;
+		width: 20%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1rem;
+		color: white;
+	}
+	#logoImg {
+		grid-area: logo;
+		height: 100%;
+		text-align: center;
+		color: white;
+		letter-spacing: 1vw;
+		font-weight: bold;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	strong {
+		font-size: 2.2rem;
+	}
+	#menuWrapper {
+		grid-area: menu;
+		display: flex;
+	}
+
+	#navi {
+		display: none;
+	}
+
+	footer {
+		width: 100%;
+		height: 200px;
+		background-color: #f9c901;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	footer p {
+		font-size: 3.5rem;
+	}
+}
+
+/* 제일 작은 버전 */
+@media (max-width: 800px) {
+	#container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	#navi {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		justify-content: left;
+		align-items: left;
+		left: -300px;
+		top: 0;
+		width: 300px;
+		height: 100%;
+		z-index: 10;
+		background-color: #242424;
+	}
+
+	#menuBtn {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		left: 320px;
+		top: 20px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-weight: black;
+		cursor: pointer;
+	}
+
+	.navilogo {
+		position: relative;
+		left: 0;
+		top: 0;
+		margin: 50px;
+		cursor: pointer;
+		width: 100%;
+		display: flex;
+		margin-bottom: 30px;
+		color: #f9c901;
+		letter-spacing: 5px;
+	}
+	strong {
+		font-size: 1.7rem;
+	}
+
+	.navimenu {
+		position: relative;
+		left: 0;
+		top: 0;
+		margin-left: 50px;
+		margin-bottom: 30px;
+		cursor: pointer;
+		width: 100%;
+		display: flex;
+		color: white;
+		letter-spacing: 3px;
+	}
+
+	.navimenu p {
+		font-size: 1.1rem;
+	}
+
+	#Topmenu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 80px;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		overflow: hidden;
+		color: white;
+		font-size: 2rem;
+	}
+
+	#logoImg {
+		width: 100%;
+		height: 80px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #131313;
+		font-size: min(max(30px, 5vw), 20px);
+		margin-left: 15px;
+		letter-spacing: 2vw;
+		font-weight: bold;
+	}
+
+	#menuWrapper {
+		position: absolute;
+		display: none;
+		width: 100%;
+		height: 30px;
+		background-color: #131313;
+	}
+
+	.Btncontainer {
+		display: inline-block;
+		cursor: pointer;
+	}
+	.bar1,
+	.bar2,
+	.bar3 {
+		width: 35px;
+		height: 5px;
+		background-color: #f9c901;
+		margin: 6px 0;
+		transition: 0.2s;
+	}
+
+	.change .bar1 {
+		-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+		transform: rotate(-45deg) translate(-9px, 6px);
+	}
+
+	.change .bar2 {
+		opacity: 0;
+	}
+
+	.change .bar3 {
+		-webkit-transform: rotate(45deg) translate(-8px, -8px);
+		transform: rotate(45deg) translate(-8px, -8px);
+	}
+
+	footer,
+	footer p {
+		width: 100%;
+		height: 100px;
+		background-color: #f9c901;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 2.5rem;
+	}
+}
