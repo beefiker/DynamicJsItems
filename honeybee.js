@@ -100,7 +100,7 @@ setInterval(function() {
 			$('#gotoF').css({ color: CurrentColor });
 			$('.navimenu').css({ color: 'white' });
 			$('#naviF').css({ color: CurrentColor });
-		} else if (browserY == page7Y.top) {
+		} else if (browserY >= page7Y.top) {
 			CurrentPageNum = 7;
 			$('.menuDesign').css({ color: 'white' });
 			$('#gotoG').css({ color: CurrentColor });
