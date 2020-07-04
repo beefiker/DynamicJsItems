@@ -1,325 +1,419 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+:root {
+    --beeDark: #242424;
+    --beeYellow: #f9c901;
+    --littleBlack: #131313;
+}
 * {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	font-family: "Monsterrat", "Jeju Gothic", serif;
-	font-weight: Medium;
-	font-size: 15px;
-	text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Monsterrat", "Jeju Gothic", serif;
+    font-weight: Medium;
+    font-size: 15px;
+    text-decoration: none;
 }
 body {
-	background-color: #131313;
+    background-color: var(--littleBlack);
 }
 .box {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 .box:nth-child(odd) {
-	background-color: #242424;
-	color: #f9c901;
+    background-color: var(--beeDark);
+    color: #f9c901;
 }
 .box:nth-child(even) {
-	background-color: #f9c901;
-	color: #242424;
+    background-color: var(--beeYellow);
+    color: #242424;
+}
+#box2 {
+    flex-direction: row;
+    justify-content: space-between;
 }
 /*큰버전 브라우저 크기 최소 1000px 이상*/
 @media (min-width: 1300px) {
-	#container {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
+    #container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
 
-	#bee {
-		position: relative;
-		width: auto;
-		height: 50%;
-	}
-	#Topmenu {
-		position: fixed;
-		width: 100%;
-		height: 100px;
-		background-color: #131313;
-		display: grid;
-		grid-template-rows: minmax(1fr, 100%);
-		grid-template-columns: repeat(6, minmax(1fr, 100%));
-		grid-template-areas: "logo logo menu menu menu menu";
-	}
+    #Topmenu {
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        background-color: var(--littleBlack);
+        display: grid;
+        grid-template-rows: minmax(1fr, 100%);
+        grid-template-columns: repeat(6, minmax(1fr, 100%));
+        grid-template-areas: "logo logo menu menu menu menu";
+        z-index: 1;
+    }
 
-	.menuDesign {
-		cursor: pointer;
-		width: 20%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 1.2rem;
-		color: white;
-	}
+    .menuDesign {
+        cursor: pointer;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        color: white;
+    }
 
-	#logoImg {
-		grid-area: logo;
-		height: 100%;
-		text-align: center;
-		color: white;
-		letter-spacing: 1vw;
-		font-weight: bold;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	#bee {
-		width: 52px;
-		height: 49px;
-	}
-	#logoText {
-		font-size: 3rem;
-		margin-left: 20px;
-	}
-	#menuWrapper {
-		grid-area: menu;
-		display: flex;
-	}
-	#navi {
-		display: none;
-	}
+    #logoImg {
+        grid-area: logo;
+        height: 100%;
+        text-align: center;
+        color: white;
+        letter-spacing: 1vw;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #bee {
+        width: 52px;
+        height: 49px;
+    }
+    #logoText {
+        font-size: 3rem;
+        margin-left: 20px;
+    }
+    #menuWrapper {
+        grid-area: menu;
+        display: flex;
+    }
+    #navi {
+        display: none;
+    }
 
-	footer {
-		width: 100%;
-		height: 200px;
-		background-color: #f9c901;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+    footer {
+        width: 100%;
+        height: 200px;
+        background-color: var(--beeYellow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-	footer p {
-		font-size: 5rem;
-	}
+    footer p {
+        font-size: 5rem;
+    }
 }
 /* 중간 버전 */
 
 @media (max-width: 1300px) {
-	#container {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
-	#Topmenu {
-		position: fixed;
-		width: 100%;
-		height: 90px;
-		background-color: #131313;
-		display: grid;
-		grid-template-rows: repeat(2, minmax(1fr, 100%));
-		grid-template-columns: 100%;
-		grid-template-areas: "logo" "menu";
-	}
+    #container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    #Topmenu {
+        position: fixed;
+        width: 100%;
+        height: 90px;
+        background-color: var(--littleBlack);
+        display: grid;
+        grid-template-rows: repeat(2, minmax(1fr, 100%));
+        grid-template-columns: 100%;
+        grid-template-areas: "logo" "menu";
+        z-index: 1;
+    }
 
-	.menuDesign {
-		cursor: pointer;
-		width: 20%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 1rem;
-		color: white;
-	}
-	#logoImg {
-		grid-area: logo;
-		height: 100%;
-		text-align: center;
-		color: white;
-		letter-spacing: 1vw;
-		font-weight: bold;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+    .menuDesign {
+        cursor: pointer;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        color: white;
+    }
+    #logoImg {
+        grid-area: logo;
+        height: 100%;
+        text-align: center;
+        color: white;
+        letter-spacing: 1vw;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-	#bee {
-		position: relative;
-		width: 39px;
-		height: 36px;
-		margin-right: 10px;
-	}
+    #bee {
+        width: 39px;
+        height: 36px;
+        margin-right: 10px;
+    }
 
-	#logoText {
-		font-size: 2.2rem;
-	}
-	#menuWrapper {
-		grid-area: menu;
-		display: flex;
-	}
+    #logoText {
+        font-size: 2.2rem;
+    }
+    #menuWrapper {
+        grid-area: menu;
+        display: flex;
+    }
 
-	#navi {
-		display: none;
-	}
+    #navi {
+        display: none;
+    }
 
-	footer {
-		width: 100%;
-		height: 200px;
-		background-color: #f9c901;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+    footer {
+        width: 100%;
+        height: 200px;
+        background-color: var(--beeYellow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-	footer p {
-		font-size: 3.5rem;
-	}
+    footer p {
+        font-size: 3.5rem;
+    }
 }
 
 /* 제일 작은 버전 */
 @media (max-width: 700px) {
-	#container {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
+    #container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
 
-	#navi {
-		position: fixed;
-		display: flex;
-		flex-direction: column;
-		justify-content: left;
-		align-items: left;
-		left: -300px;
-		top: 0;
-		width: 300px;
-		height: 100%;
-		z-index: 10;
-		background-color: #242424;
-	}
+    #navi {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+        left: -300px;
+        top: 0;
+        width: 300px;
+        height: 100%;
+        z-index: 10;
+        background-color: #242424;
+    }
 
-	#menuBtn {
-		position: absolute;
-		width: 40px;
-		height: 40px;
-		left: 320px;
-		top: 20px;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		color: white;
-		font-weight: black;
-		cursor: pointer;
-	}
+    #menuBtn {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 320px;
+        top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: black;
+        cursor: pointer;
+    }
 
-	.navilogo {
-		position: relative;
-		left: 0;
-		top: 0;
-		margin: 50px;
-		cursor: pointer;
-		width: 100%;
-		display: flex;
-		margin-bottom: 30px;
-		color: #f9c901;
-		letter-spacing: 5px;
-	}
-	#bee {
-		display: none;
-	}
-	#logoText {
-		font-size: 1.7rem;
-	}
+    .navilogo {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 50px;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        margin-bottom: 30px;
+        color: var(--beeYellow);
+        letter-spacing: 5px;
+    }
+    #bee {
+        display: none;
+    }
+    #logoText {
+        font-size: 1.7rem;
+    }
 
-	.navimenu {
-		position: relative;
-		left: 0;
-		top: 0;
-		margin-left: 50px;
-		margin-bottom: 30px;
-		cursor: pointer;
-		width: 100%;
-		display: flex;
-		color: white;
-		letter-spacing: 3px;
-	}
+    .navimenu {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-left: 50px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        color: white;
+        letter-spacing: 3px;
+    }
 
-	.navimenu p {
-		font-size: 1.1rem;
-	}
+    .navimenu p {
+        font-size: 1.1rem;
+    }
 
-	#Topmenu {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 80px;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		overflow: hidden;
-		color: white;
-		font-size: 2rem;
-	}
+    #Topmenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        color: white;
+        font-size: 2rem;
+        z-index: 1;
+    }
 
-	#logoImg {
-		width: 100%;
-		height: 80px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: #131313;
-		font-size: min(max(30px, 5vw), 20px);
-		margin-left: 15px;
-		letter-spacing: 2vw;
-		font-weight: bold;
-	}
+    #logoImg {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--littleBlack);
+        font-size: min(max(30px, 5vw), 20px);
+        margin-left: 15px;
+        letter-spacing: 2vw;
+        font-weight: bold;
+    }
 
-	#menuWrapper {
-		position: absolute;
-		display: none;
-		width: 100%;
-		height: 30px;
-		background-color: #131313;
-	}
+    #menuWrapper {
+        position: absolute;
+        display: none;
+        width: 100%;
+        height: 30px;
+        background-color: var(--littleBlack);
+    }
 
-	.Btncontainer {
-		display: inline-block;
-		cursor: pointer;
-	}
-	.bar1,
-	.bar2,
-	.bar3 {
-		width: 35px;
-		height: 5px;
-		background-color: #f9c901;
-		margin: 6px 0;
-		transition: 0.2s;
-	}
+    .Btncontainer {
+        display: inline-block;
+        cursor: pointer;
+    }
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: var(--beeYellow);
+        margin: 6px 0;
+        transition: 0.2s;
+    }
 
-	.change .bar1 {
-		-webkit-transform: rotate(-45deg) translate(-9px, 6px);
-		transform: rotate(-45deg) translate(-9px, 6px);
-	}
+    .change .bar1 {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
 
-	.change .bar2 {
-		opacity: 0;
-	}
+    .change .bar2 {
+        opacity: 0;
+    }
 
-	.change .bar3 {
-		-webkit-transform: rotate(45deg) translate(-8px, -8px);
-		transform: rotate(45deg) translate(-8px, -8px);
-	}
-	footer,
-	footer p {
-		width: 100%;
-		height: 100px;
-		background-color: #f9c901;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 2rem;
-		flex-direction: row;
-		text-align: center;
-	}
+    .change .bar3 {
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+    footer,
+    footer p {
+        width: 100%;
+        height: 100px;
+        background-color: var(--beeYellow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        flex-direction: row;
+        text-align: center;
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes reverse_rotating {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+.rotating {
+    opacity: 1;
+    width: 40%;
+    animation: rotating 60s linear infinite;
+}
+.reverse_rotating {
+    opacity: 1;
+    width: 40%;
+    animation: reverse_rotating 60s linear infinite;
+}
+/* cube css start */
+
+#buttonwrapper {
+    position: relative;
+    top: -200%;
+}
+#cubewrap {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 15%;
+}
+
+#cube {
+    width: 50%;
+    height: 25%;
+    transform-style: preserve-3d;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 100%;
+}
+#cube .cub1,
+#cube .cub2,
+#cube .cub3,
+#cube .cub4,
+#cube .cub5,
+#cube .cub6 {
+    position: absolute;
+    width: 200%;
+    height: 0%;
+    transform-style: preserve-3d;
+}
+
+#cube .cub1 {
+    transform: translatez(0);
+}
+
+#cube .cub2 {
+    transform: rotatey(90deg) translatez(0);
+}
+
+#cube .cub3 {
+    transform: rotatey(90deg) rotatex(90deg) translatez(0);
+}
+
+#cube .cub4 {
+    transform: rotatey(180deg) rotatez(90deg) translatez(0);
+}
+
+#cube .cub5 {
+    transform: rotatey(-90deg) rotatez(90deg) translatez(0);
+}
+
+#cube .cub6 {
+    transform: rotatex(-90deg) translatez(0);
+}
+
+#cubeimg {
+    width: 100%;
+    margin-top: -50%;
 }

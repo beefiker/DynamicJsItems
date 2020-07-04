@@ -1,92 +1,109 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>HTML Prototype</title>
-		<meta name="author" content="Jaeyoung2" />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML Prototype</title>
+        <meta name="author" content="Jaeyoung2" />
 
-		<link rel="stylesheet" href="honeybee.css" />
-		<link
-			href="http://fonts.googleapis.com/css?family=Poiret+One"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<link
-			href="http://fonts.googleapis.com/css?family=Montserrat"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<link
-			href="http://fonts.googleapis.com/css?family=Cinzel:900,600,400"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
-		<script
-			src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-			integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-			crossorigin="anonymous"
-		></script>
-		<script
-			type="text/javascript"
-			src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-full.min.js"
-		></script>
-	</head>
-	<body>
-		<div id="container">
-			<nav>
-				<div id="navi">
-					<div id="menuBtn">
-						<div class="Btncontainer">
-							<div class="bar1"></div>
-							<div class="bar2"></div>
-							<div class="bar3"></div>
-						</div>
-					</div>
-					<ul>
-						<li id="logoTag" class="navilogo">
-							<strong id="logoText">HoneyBee</strong>
-						</li>
-						<li id="naviA" class="navimenu"><p>page1</p></li>
-						<li id="naviB" class="navimenu"><p>page2</p></li>
-						<li id="naviC" class="navimenu"><p>page3</p></li>
-						<li id="naviD" class="navimenu"><p>page4</p></li>
-						<li id="naviE" class="navimenu"><p>page5</p></li>
-						<li id="naviF" class="navimenu"><p>page6</p></li>
-						<li id="naviG" class="navimenu"><p>page7</p></li>
-					</ul>
-				</div>
-			</nav>
+        <link rel="stylesheet" href="honeybee.css" />
+        <link href="http://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css" />
+        <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+        <link href="http://fonts.googleapis.com/css?family=Cinzel:900,600,400" rel="stylesheet" type="text/css" />
+        <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+        <script
+            src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+            integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://kit.fontawesome.com/7637a8f104.js" crossorigin="anonymous"></script>
+        <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-full.min.js"
+        ></script>
+    </head>
+    <body>
+        <div id="container">
+            <nav>
+                <div id="navi">
+                    <div id="menuBtn">
+                        <div class="Btncontainer">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li id="logoTag" class="navilogo">
+                            <strong id="logoText">HoneyBee</strong>
+                        </li>
+                        <li id="naviA" class="navimenu"><span>page1</span></li>
+                        <li id="naviB" class="navimenu"><span>page2</span></li>
+                        <li id="naviC" class="navimenu"><span>page3</span></li>
+                        <li id="naviD" class="navimenu"><span>page4</span></li>
+                        <li id="naviE" class="navimenu"><span>page5</span></li>
+                        <li id="naviF" class="navimenu"><span>page6</span></li>
+                        <li id="naviG" class="navimenu"><span>page7</span></li>
+                    </ul>
+                </div>
+            </nav>
 
-			<div id="Topmenu">
-				<div id="logoImg">
-					<img id="bee" src="bee.png" alt="bee" />
-					<strong id="logoText">HoneyBee</strong>
-				</div>
-				<ul id="menuWrapper">
-					<li id="gotoA" class="menuDesign">Page1</li>
-					<li id="gotoB" class="menuDesign">Page2</li>
-					<li id="gotoC" class="menuDesign">Page3</li>
-					<li id="gotoD" class="menuDesign">Page4</li>
-					<li id="gotoE" class="menuDesign">Page5</li>
-					<li id="gotoF" class="menuDesign">Page6</li>
-					<li id="gotoG" class="menuDesign">Page7</li>
-				</ul>
-			</div>
+            <div id="Topmenu">
+                <div id="logoImg">
+                    <img id="bee" src="bee.png" alt="bee" />
+                    <strong id="logoText">HoneyBee</strong>
+                </div>
+                <ul id="menuWrapper">
+                    <li id="gotoA" class="menuDesign">Cube</li>
+                    <li id="gotoB" class="menuDesign">Rotate</li>
+                    <li id="gotoC" class="menuDesign">Page3</li>
+                    <li id="gotoD" class="menuDesign">Page4</li>
+                    <li id="gotoE" class="menuDesign">Page5</li>
+                    <li id="gotoF" class="menuDesign">Page6</li>
+                    <li id="gotoG" class="menuDesign">Page7</li>
+                </ul>
+            </div>
+            `
+            <div id="box1" class="box">
+                <div id="otherbrowser">
+                    <div id="buttonwrapper">
+                        <p id="buttonwrap" align="center">
+                            <button id="btngoto1">1</button>
+                            <button id="btngoto2">2</button>
+                            <button id="btngoto3">3</button>
+                            <button id="btngoto4">4</button>
+                            <button id="btngoto5">5</button>
+                            <button id="btngoto6">6</button>
+                        </p>
+                    </div>
 
-			<div id="box1" class="box"></div>
-			<div id="box2" class="box"></div>
-			<div id="box3" class="box"></div>
-			<div id="box4" class="box"></div>
-			<div id="box5" class="box"></div>
-			<div id="box6" class="box"></div>
-			<div id="box7" class="box"></div>
+                    <div id="cubewrap">
+                        <div id="cube">
+                            <div class="cub1"><img id="cubeimg" src="images/JAVA.png" /></div>
+                            <div class="cub2"><img id="cubeimg" src="images/JQUERY.png" /></div>
+                            <div class="cub3"><img id="cubeimg" src="images/css.png" /></div>
+                            <div class="cub4"><img id="cubeimg" src="images/HTML.png" /></div>
+                            <div class="cub5"><img id="cubeimg" src="images/AI.png" /></div>
+                            <div class="cub6"><img id="cubeimg" src="images/ps.png" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="box2" class="box">
+                <img src="beehive.png" class="rotating" alt="beehive" />
+                <img src="bee.png" class="honeybeeImg" alt="bee" />
+                <img src="beehive.png" class="reverse_rotating" alt="beehive" />
+            </div>
+            <div id="box3" class="box"></div>
+            <div id="box4" class="box"></div>
+            <div id="box5" class="box"></div>
+            <div id="box6" class="box"></div>
+            <div id="box7" class="box"></div>
 
-			<footer>
-				<p>Responsive HoneyBee</p>
-			</footer>
-		</div>
-	</body>
-	<script type="text/javascript" src="honeybee.js"></script>
+            <footer>
+                <p>Responsive HoneyBee</p>
+            </footer>
+        </div>
+    </body>
+    <script type="text/javascript" src="honeybee.js"></script>
 </html>
