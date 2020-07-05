@@ -26,7 +26,7 @@ $(window).resize(function () {
     if (CurrentMenuValue == 1) {
         if ($(window).width() >= 800) {
             $("#navi").animate({ left: "-300px" }, 200);
-            $("#wrapper, #Topmenu").animate({ left: 0 }, 200);
+            $("#Topmenu, #container").animate({ left: 0 }, 200);
             $(".Btncontainer").removeClass("change");
             CurrentMenuValue = 0;
         }
@@ -79,7 +79,7 @@ $("#naviA").css({ color: CurrentColor });
 setInterval(function () {
     $(window).scroll(() => {
         let browserY = $(document).scrollTop();
-        let CurrentPageNum = 1;
+        let CurrentPageNum = 0;
         const page1Y = $("#box1").offset();
         const page2Y = $("#box2").offset();
         const page3Y = $("#box3").offset();
@@ -94,31 +94,31 @@ setInterval(function () {
             $("#gotoA").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviA").css({ color: CurrentColor });
-            $(".honeybeeImg").removeClass("rotating");
-            $(".honeybeeImg").removeClass("reverse_rotating");
+            $(".rotationImg").removeClass("rotating");
+            $(".rotationImg").removeClass("reverse_rotating");
         } else if (browserY == page1Y.top && browserY == page2Y.top) {
             CurrentPageNum = 1;
             $(".menuDesign").css({ color: "white" });
             $("#gotoA").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviB").css({ color: CurrentColor });
-            $(".honeybeeImg").removeClass("rotating");
-            $(".honeybeeImg").removeClass("reverse_rotating");
+            $(".rotationImg").removeClass("rotating");
+            $(".rotationImg").removeClass("reverse_rotating");
         } else if ((browserY > page2Y.top && browserY < page3Y.top) || browserY == page2Y.top) {
             CurrentPageNum = 2;
             $(".menuDesign").css({ color: "white" });
             $("#gotoB").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviB").css({ color: CurrentColor });
-            $(".honeybeeImg").addClass("rotating");
+            $(".rotationImg").addClass("rotating");
         } else if ((browserY > page3Y.top && browserY < page4Y.top) || browserY == page3Y.top) {
             CurrentPageNum = 3;
             $(".menuDesign").css({ color: "white" });
             $("#gotoC").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviC").css({ color: CurrentColor });
-            $(".honeybeeImg").removeClass("rotating");
-            $(".honeybeeImg").removeClass("reverse_rotating");
+            $(".rotationImg").removeClass("rotating");
+            $(".rotationImg").removeClass("reverse_rotating");
         } else if ((browserY >= page4Y.top && browserY < page5Y.top) || browserY == page4Y.top) {
             CurrentPageNum = 4;
             $(".menuDesign").css({ color: "white" });
@@ -153,13 +153,13 @@ $("#menuBtn").click(() => {
         case 0:
             $(".Btncontainer").addClass("change");
             $("#navi").animate({ left: 0 }, 200);
-            $("#Topmenu, #wrapper").animate({ left: "300px" }, 200);
+            $("#Topmenu, #container").animate({ left: "300px" }, 200);
             CurrentMenuValue = 1;
             break;
         case 1:
             $(".Btncontainer").removeClass("change");
             $("#navi").animate({ left: "-300px" }, 200);
-            $("#wrapper, #Topmenu").animate({ left: 0 }, 200);
+            $("#Topmenu, #container").animate({ left: 0 }, 200);
             CurrentMenuValue = 0;
             break;
     }
@@ -167,7 +167,7 @@ $("#menuBtn").click(() => {
         $(".box").click(() => {
             $(".Btncontainer").removeClass("change");
             $("#navi").animate({ left: "-300px" }, 200);
-            $("#wrapper, #Topmenu").animate({ left: 0 }, 200);
+            $("#Topmenu, #container").animate({ left: 0 }, 200);
             CurrentMenuValue = 0;
         });
     }
@@ -233,8 +233,8 @@ $("#btngoto6").click(() => {
     });
 });
 
-let bee = document.querySelector(".honeybeeImg");
-bee.addEventListener("click", () => {
-    bee.classList.toggle("rotating");
-    bee.classList.toggle("reverse_rotating");
+let rotateImg = document.querySelector(".rotationImg");
+rotateImg.addEventListener("click", () => {
+    rotateImg.classList.toggle("rotating");
+    rotateImg.classList.toggle("reverse_rotating");
 });

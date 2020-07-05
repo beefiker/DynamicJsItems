@@ -358,7 +358,7 @@ body {
     animation: rotating 1s linear infinite;
     transform-origin: center;
 }
-.honeybeeImg {
+.rotationImg {
     width: 30%;
 }
 .reverse_rotating {
