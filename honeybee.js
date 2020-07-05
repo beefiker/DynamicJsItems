@@ -81,43 +81,50 @@ setInterval(function () {
         const page6Y = $("#box6").offset();
         const page7Y = $("#box7").offset();
 
-        if (browserY == page1Y.top) {
+        if (browserY <= page1Y.top) {
             CurrentPageNum = 0;
             $(".menuDesign").css({ color: "white" });
             $("#gotoA").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviA").css({ color: CurrentColor });
-        } else if (browserY > page1Y && browserY == page2Y.top) {
+            $(".honeybeeImg").removeClass("rotating");
+            $(".honeybeeImg").removeClass("reverse_rotating");
+        } else if (browserY >= page1Y.top && browserY == page2Y.top) {
             CurrentPageNum = 1;
             $(".menuDesign").css({ color: "white" });
             $("#gotoA").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviB").css({ color: CurrentColor });
+            $(".honeybeeImg").removeClass("rotating");
+            $(".honeybeeImg").removeClass("reverse_rotating");
         } else if ((browserY > page2Y.top && browserY < page3Y.top) || browserY == page2Y.top) {
             CurrentPageNum = 2;
             $(".menuDesign").css({ color: "white" });
             $("#gotoB").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviB").css({ color: CurrentColor });
+            $(".honeybeeImg").addClass("rotating");
         } else if ((browserY > page3Y.top && browserY < page4Y.top) || browserY == page3Y.top) {
             CurrentPageNum = 3;
             $(".menuDesign").css({ color: "white" });
             $("#gotoC").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviC").css({ color: CurrentColor });
-        } else if ((browserY > page4Y.top && browserY < page5Y.top) || browserY == page4Y.top) {
+            $(".honeybeeImg").removeClass("rotating");
+            $(".honeybeeImg").removeClass("reverse_rotating");
+        } else if ((browserY >= page4Y.top && browserY < page5Y.top) || browserY == page4Y.top) {
             CurrentPageNum = 4;
             $(".menuDesign").css({ color: "white" });
             $("#gotoD").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviD").css({ color: CurrentColor });
-        } else if ((browserY > page5Y.top && browserY < page6Y.top) || browserY == page5Y.top) {
+        } else if ((browserY >= page5Y.top && browserY < page6Y.top) || browserY == page5Y.top) {
             CurrentPageNum = 5;
             $(".menuDesign").css({ color: "white" });
             $("#gotoE").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviE").css({ color: CurrentColor });
-        } else if ((browserY > page6Y.top && browserY < page7Y.top) || browserY == page6Y.top) {
+        } else if ((browserY >= page6Y.top && browserY < page7Y.top) || browserY == page6Y.top) {
             CurrentPageNum = 6;
             $(".menuDesign").css({ color: "white" });
             $("#gotoF").css({ color: CurrentColor });
@@ -131,7 +138,7 @@ setInterval(function () {
             $("#naviG").css({ color: CurrentColor });
         }
     });
-}, 700);
+}, 500);
 
 let CurrentMenuValue = 0; // * 메뉴 숨겨있을 때 0, 클릭해서 나타냈을 때 1
 $("#menuBtn").click(function () {
@@ -217,4 +224,11 @@ $("#btngoto6").click(function () {
         transform: " rotateX(90deg)",
         "transition-duration": "1.5s",
     });
+});
+
+let bee = document.querySelector(".honeybeeImg");
+
+bee.addEventListener("click", function () {
+    bee.classList.toggle("rotating");
+    bee.classList.toggle("reverse_rotating");
 });

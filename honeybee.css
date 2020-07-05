@@ -54,7 +54,7 @@ body {
         grid-template-rows: minmax(1fr, 100%);
         grid-template-columns: repeat(6, minmax(1fr, 100%));
         grid-template-areas: "logo logo menu menu menu menu";
-        z-index: 1;
+        z-index: 2;
     }
 
     .menuDesign {
@@ -124,7 +124,7 @@ body {
         grid-template-rows: repeat(2, minmax(1fr, 100%));
         grid-template-columns: 100%;
         grid-template-areas: "logo" "menu";
-        z-index: 1;
+        z-index: 2;
     }
 
     .menuDesign {
@@ -265,7 +265,7 @@ body {
         overflow: hidden;
         color: white;
         font-size: 2rem;
-        z-index: 1;
+        z-index: 2;
     }
 
     #logoImg {
@@ -346,24 +346,27 @@ body {
     }
 }
 .rotating {
-    width: 10%;
-    animation: rotating 5s linear infinite;
+    animation: rotating 1s linear infinite;
     transform-origin: center;
+}
+.honeybeeImg {
     width: 30%;
 }
 .reverse_rotating {
     opacity: 1;
     width: 30%;
-    animation: reverse_rotating 10s linear infinite;
-    transform-origin: 0% 50%;
-    padding-right: 10%;
+    animation: reverse_rotating 1s linear infinite;
+    transform-origin: center;
 }
 #buttonwrapper {
+    position: relative;
+    top: -170%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 200px;
     height: 50px;
+    z-index: 1;
 }
 #buttonwrapper li {
     display: flex;
@@ -378,10 +381,6 @@ body {
 }
 /* cube css start */
 
-#buttonwrapper {
-    position: relative;
-    top: -200%;
-}
 #cubewrap {
     margin: 0 auto;
     width: 100%;
