@@ -238,3 +238,9 @@ rotateImg.addEventListener("click", () => {
     rotateImg.classList.toggle("rotating");
     rotateImg.classList.toggle("reverse_rotating");
 });
+
+let backBtn = document.querySelector(".backBtn");
+
+backBtn.addEventListener("click", () => {
+    $(".circles").removeClass("circles");
+});
