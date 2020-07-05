@@ -33,33 +33,40 @@ $(window).resize(function () {
     }
 });
 
-// * Click animating jquery code starts from here.
+// * Click animating code starts from here.
+
 const page = $("html, body");
-$("#gotoA, #naviA").click(function () {
+
+const logo = document.querySelector("#logoImg");
+logo.addEventListener("click", () => {
+    window.scrollTo({ top: document.querySelector("#box1").offsetTop, behavior: "smooth" });
+});
+
+$("#gotoA, #naviA").click(() => {
     const CurrentBoxTop = $("#box1").offset().top;
     page.stop().animate({ scrollTop: CurrentBoxTop }, 800, "easeInExpo");
 });
-$("#gotoB, #naviB").click(function () {
+$("#gotoB, #naviB").click(() => {
     const CurrentBoxTop = $("#box2").offset().top;
     page.stop().animate({ scrollTop: CurrentBoxTop }, 800, "easeInExpo");
 });
-$("#gotoC, #naviC").click(function () {
+$("#gotoC, #naviC").click(() => {
     const CurrentBoxTop = $("#box3").offset().top;
     page.stop().animate({ scrollTop: CurrentBoxTop }, 800, "easeInExpo");
 });
-$("#gotoD, #naviD").click(function () {
+$("#gotoD, #naviD").click(() => {
     const CurrentBoxTop = $("#box4").offset().top;
     page.stop().animate({ scrollTop: CurrentBoxTop }, 800, "easeInExpo");
 });
-$("#gotoE, #naviE").click(function () {
+$("#gotoE, #naviE").click(() => {
     const CurrentBoxTop = $("#box5").offset().top;
     page.stop().animate({ scrollTop: CurrentBoxTop }, 800, "easeInExpo");
 });
-$("#gotoF, #naviF").click(function () {
+$("#gotoF, #naviF").click(() => {
     const CurrentBoxTop = $("#box6").offset().top;
     page.stop().animate({ scrollTop: CurrentBoxTop }, 800, "easeInExpo");
 });
-$("#gotoG, #naviG").click(function () {
+$("#gotoG, #naviG").click(() => {
     const CurrentBoxTop = $("#box7").offset().top;
     page.stop().animate({ scrollTop: CurrentBoxTop }, 800, "easeInExpo");
 });
@@ -70,7 +77,7 @@ $("#naviA").css({ color: CurrentColor });
 
 // ! 셋인터벌로 브라우저 속도 조절
 setInterval(function () {
-    $(window).scroll(function () {
+    $(window).scroll(() => {
         let browserY = $(document).scrollTop();
         let CurrentPageNum = 1;
         const page1Y = $("#box1").offset();
@@ -89,7 +96,7 @@ setInterval(function () {
             $("#naviA").css({ color: CurrentColor });
             $(".honeybeeImg").removeClass("rotating");
             $(".honeybeeImg").removeClass("reverse_rotating");
-        } else if (browserY >= page1Y.top && browserY == page2Y.top) {
+        } else if (browserY == page1Y.top && browserY == page2Y.top) {
             CurrentPageNum = 1;
             $(".menuDesign").css({ color: "white" });
             $("#gotoA").css({ color: CurrentColor });
@@ -141,7 +148,7 @@ setInterval(function () {
 }, 500);
 
 let CurrentMenuValue = 0; // * 메뉴 숨겨있을 때 0, 클릭해서 나타냈을 때 1
-$("#menuBtn").click(function () {
+$("#menuBtn").click(() => {
     switch (CurrentMenuValue) {
         case 0:
             $(".Btncontainer").addClass("change");
@@ -157,7 +164,7 @@ $("#menuBtn").click(function () {
             break;
     }
     if (CurrentMenuValue == 1) {
-        $(".box").click(function () {
+        $(".box").click(() => {
             $(".Btncontainer").removeClass("change");
             $("#navi").animate({ left: "-300px" }, 200);
             $("#wrapper, #Topmenu").animate({ left: 0 }, 200);
@@ -188,38 +195,38 @@ $("#cube > .cub6").css({
     transform: "rotateX(-90deg) translateZ(0px) translateZ(" + wd + "px)",
 });
 
-$("#btngoto1").click(function () {
+$("#btngoto1").click(() => {
     $("#cube").css({
         transform: "rotateY(0deg)",
         "transition-duration": "1.5s",
     });
 });
 
-$("#btngoto2").click(function () {
+$("#btngoto2").click(() => {
     $("#cube").css({
         transform: "rotateY(-90deg)",
         "transition-duration": "1.5s",
     });
 });
-$("#btngoto3").click(function () {
+$("#btngoto3").click(() => {
     $("#cube").css({
         transform: "rotateX(-90deg) rotateY(-90deg)",
         "transition-duration": "1.5s",
     });
 });
-$("#btngoto4").click(function () {
+$("#btngoto4").click(() => {
     $("#cube").css({
         transform: " rotateY(180deg) rotateZ(90deg)",
         "transition-duration": "1.5s",
     });
 });
-$("#btngoto5").click(function () {
+$("#btngoto5").click(() => {
     $("#cube").css({
         transform: " rotateX(-90deg) rotateY(180deg) rotateZ(90deg)",
         "transition-duration": "1.5s",
     });
 });
-$("#btngoto6").click(function () {
+$("#btngoto6").click(() => {
     $("#cube").css({
         transform: " rotateX(90deg)",
         "transition-duration": "1.5s",
@@ -227,8 +234,7 @@ $("#btngoto6").click(function () {
 });
 
 let bee = document.querySelector(".honeybeeImg");
-
-bee.addEventListener("click", function () {
+bee.addEventListener("click", () => {
     bee.classList.toggle("rotating");
     bee.classList.toggle("reverse_rotating");
 });

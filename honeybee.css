@@ -37,6 +37,14 @@ body {
     flex-direction: row;
     justify-content: center;
 }
+.backBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
 /*큰버전 브라우저 크기 최소 1000px 이상*/
 @media (min-width: 1300px) {
     #container {
@@ -229,12 +237,6 @@ body {
         color: var(--beeYellow);
         letter-spacing: 5px;
     }
-    #bee {
-        display: none;
-    }
-    #logoText {
-        font-size: 1.7rem;
-    }
 
     .navimenu {
         position: relative;
@@ -243,7 +245,6 @@ body {
         margin-left: 50px;
         margin-bottom: 30px;
         cursor: pointer;
-        width: 100%;
         display: flex;
         color: white;
         letter-spacing: 3px;
@@ -258,27 +259,32 @@ body {
         top: 0;
         left: 0;
         width: 100%;
-        height: 80px;
+        height: 55px;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
         overflow: hidden;
         color: white;
-        font-size: 2rem;
         z-index: 2;
     }
 
     #logoImg {
         width: 100%;
-        height: 80px;
+        height: 55px;
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: var(--littleBlack);
         font-size: min(max(30px, 5vw), 20px);
-        margin-left: 15px;
-        letter-spacing: 2vw;
+        letter-spacing: 1.2vw;
         font-weight: bold;
+    }
+
+    #bee {
+        display: none;
+    }
+
+    #logoText {
+        font-size: 1.7rem;
     }
 
     #menuWrapper {
@@ -292,6 +298,9 @@ body {
     .Btncontainer {
         display: inline-block;
         cursor: pointer;
+        position: relative;
+        top: -12.5px;
+        left: -5px;
     }
     .bar1,
     .bar2,
@@ -360,7 +369,7 @@ body {
 }
 #buttonwrapper {
     position: relative;
-    top: -170%;
+    top: -165%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -378,9 +387,10 @@ body {
     cursor: pointer;
     color: var(--beeDark);
     box-shadow: 3px 3px 2px 1px black;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 /* cube css start */
-
 #cubewrap {
     margin: 0 auto;
     width: 100%;
@@ -400,16 +410,10 @@ body {
     transform-style: preserve-3d;
     transform-origin: 100%;
 }
-#cube .cub1,
-#cube .cub2,
-#cube .cub3,
-#cube .cub4,
-#cube .cub5,
-#cube .cub6 {
+#cube div {
     position: absolute;
     width: 200%;
     height: 0%;
-    /* opacity: 0.85; */
 }
 
 #cube .cub1 {
