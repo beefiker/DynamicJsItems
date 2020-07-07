@@ -8,6 +8,12 @@ $(window).resize(function () {
             CurrentMenuValue = 0;
         }
     }
+
+    if (window.matchMedia("(max-width: 700px)").matches) {
+        contact.scaling = 0.25;
+    } else {
+        contact.scaling = 0.3;
+    }
 });
 
 // * Click animating code starts from here.
@@ -72,21 +78,21 @@ setInterval(function () {
 
         if (browserY < page2Y.top) {
             CurrentPageNum = 0;
-            $(".menuDesign").css({ color: "white" });
+            $(".menuList").css({ color: "white" });
             $("#gotoA").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviA").css({ color: CurrentColor });
+            $(".rotationImg").removeClass("rotating");
+            $(".rotationImg").removeClass("reverse_rotating");
         } else if (browserY == page1Y.top && browserY < page2Y.top) {
             CurrentPageNum = 1;
-            $(".menuDesign").css({ color: "white" });
+            $(".menuList").css({ color: "white" });
             $("#gotoA").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviB").css({ color: CurrentColor });
-            $(".rotationImg").removeClass("rotating");
-            $(".rotationImg").removeClass("reverse_rotating");
         } else if ((browserY >= page2Y.top && browserY <= page3Y.top) || browserY == page2Y.top) {
             CurrentPageNum = 2;
-            $(".menuDesign").css({ color: "white" });
+            $(".menuList").css({ color: "white" });
             $("#gotoB").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviB").css({ color: CurrentColor });
@@ -98,7 +104,7 @@ setInterval(function () {
             circle_4.classList.remove("bingbing_active");
         } else if ((browserY >= page3Y.top && browserY <= page4Y.top) || browserY == page3Y.top) {
             CurrentPageNum = 3;
-            $(".menuDesign").css({ color: "white" });
+            $(".menuList").css({ color: "white" });
             $("#gotoC").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviC").css({ color: CurrentColor });
@@ -111,7 +117,7 @@ setInterval(function () {
             circle_4.classList.add("bingbing_active");
         } else if ((browserY >= page4Y.top && browserY <= page5Y.top) || browserY == page4Y.top) {
             CurrentPageNum = 4;
-            $(".menuDesign").css({ color: "white" });
+            $(".menuList").css({ color: "white" });
             $("#gotoD").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviD").css({ color: CurrentColor });
@@ -122,19 +128,19 @@ setInterval(function () {
             circle_4.classList.remove("bingbing_active");
         } else if ((browserY >= page5Y.top && browserY <= page6Y.top) || browserY == page5Y.top) {
             CurrentPageNum = 5;
-            $(".menuDesign").css({ color: "white" });
+            $(".menuList").css({ color: "white" });
             $("#gotoE").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviE").css({ color: CurrentColor });
         } else if ((browserY >= page6Y.top && browserY <= page7Y.top) || browserY == page6Y.top) {
             CurrentPageNum = 6;
-            $(".menuDesign").css({ color: "white" });
+            $(".menuList").css({ color: "white" });
             $("#gotoF").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviF").css({ color: CurrentColor });
         } else if (browserY >= page7Y.top) {
             CurrentPageNum = 7;
-            $(".menuDesign").css({ color: "white" });
+            $(".menuList").css({ color: "white" });
             $("#gotoG").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviG").css({ color: CurrentColor });
@@ -168,7 +174,7 @@ $("#menuBtn").click(() => {
     }
 });
 
-/*cube*/
+/* cube sizing */
 
 var wd = $("#cubewrap").width() / 2;
 $("#cube > .cub1").css({
@@ -229,13 +235,93 @@ $("#btngoto6").click(() => {
 });
 
 let rotateImg = document.querySelector(".rotationImg");
+
 rotateImg.addEventListener("click", () => {
     rotateImg.classList.toggle("rotating");
     rotateImg.classList.toggle("reverse_rotating");
 });
 
-let backBtn = document.querySelector(".backBtn");
+// ! paperJS code start here
+const paperItem = document.querySelector("#paperCanvas");
 
-backBtn.addEventListener("click", () => {
-    $(".circles").removeClass("circles");
+paperItem.addEventListener("click", () => {
+    alert("asd");
 });
+
+paper.install(window);
+var canvas = document.getElementById("paperCanvas");
+
+paper.setup(canvas);
+
+var headphoneLeft = new Path.Ellipse({
+    center: [-30, 50],
+    radius: [50, 50],
+    fillColor: "#f9c901",
+    strokeColor: "#242424",
+    strokeWidth: 2,
+});
+var headphoneRight = new Path.Ellipse({
+    center: [130, 50],
+    radius: [50, 50],
+    fillColor: "#f9c901",
+    strokeColor: "#242424",
+    strokeWidth: 2,
+});
+var headphoneTop = new Path.Ellipse({
+    center: [50, 30],
+    radius: [100, 100],
+    fillColor: "#f9c901",
+    strokeColor: "#242424",
+    strokeWidth: 2,
+});
+headphoneTop.removeSegment(3);
+
+var head = new Path.Ellipse({
+    center: [50, 50],
+    radius: [100, 100],
+    fillColor: "#242424",
+});
+var headphoneLine = new Path();
+headphoneLine.strokeColor = "dark";
+headphoneLine.strokeWidth = 5;
+var start = new Point(155, 55);
+headphoneLine.moveTo(start);
+headphoneLine.lineTo(155, 150);
+headphoneLine.lineTo(75, 150);
+
+var microPhone = new Path.Ellipse({
+    center: [75, 150],
+    radius: [15, 10],
+    fillColor: "#f9c901",
+    strokeColor: "#242424",
+    strokeWidth: 2,
+});
+
+var eyeLeft = new Path();
+eyeLeft.strokeColor = "#f9c901";
+eyeLeft.strokeWidth = 15;
+eyeLeft.moveTo(10, 15);
+eyeLeft.lineTo(10, 55);
+
+var eyeRight = new Path();
+eyeRight.strokeColor = "#f9c901";
+eyeRight.strokeWidth = 15;
+eyeRight.moveTo(90, 15);
+eyeRight.lineTo(90, 55);
+
+var mouth = new Path.Ellipse({
+    center: [50, 90],
+    radius: [50, 50],
+    fillColor: "#f9c901",
+});
+
+mouth.removeSegment(1);
+var contact = new Group({
+    children: [headphoneLine, headphoneLeft, headphoneRight, headphoneTop, head, mouth, microPhone, eyeLeft, eyeRight],
+    applyMatrix: false,
+});
+if (window.matchMedia("(max-width: 700px)").matches) {
+    contact.scaling = 0.25;
+} else {
+    contact.scaling = 0.3;
+}

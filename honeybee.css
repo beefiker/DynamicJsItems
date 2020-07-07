@@ -37,15 +37,15 @@ body {
     flex-direction: row;
     justify-content: center;
 }
-.backBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: red;
+.menuList {
+    cursor: pointer;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
-/*큰버전 브라우저 크기 최소 1000px 이상*/
+
 @media (min-width: 1300px) {
     #container {
         position: absolute;
@@ -65,14 +65,8 @@ body {
         z-index: 2;
     }
 
-    .menuDesign {
-        cursor: pointer;
-        width: 20%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .menuList {
         font-size: 1.2rem;
-        color: white;
     }
 
     #logoImg {
@@ -141,14 +135,8 @@ body {
         z-index: 2;
     }
 
-    .menuDesign {
-        cursor: pointer;
-        width: 20%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .menuList {
         font-size: 1rem;
-        color: white;
     }
     #logoImg {
         grid-area: logo;
@@ -264,6 +252,8 @@ body {
 
     .navimenu span {
         font-size: 1.1rem;
+        padding: 5px 10px 10px 5px;
+        border-bottom: 2px var(--beeYellow) solid;
     }
 
     .navimenu span:hover {
@@ -535,4 +525,14 @@ circle:nth-of-type(4) {
     }
 }
 
+#paperCanvas {
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    float: left;
+    z-index: 2;
+    cursor: pointer;
+}
 /* TODO: Lets think what i need to do on box3*/
