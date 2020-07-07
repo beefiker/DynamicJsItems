@@ -1,26 +1,3 @@
-/* function msieversion() {  // ! ie browser check function But deosn't needed this time
-    var ua = window.navigator.userAgent;
-    var msie = ua.indexOf("MSIE ");
-
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-        // If Internet Explorer, return version number
-
-        $("#buttonwrapper,#cubewrap,#controltxt,#controltxt1").hide();
-        $("#explorer").show();
-        $(".shine").css({
-            color: "rgba(255, 255, 255, 1)",
-            background: "rgba(255, 255, 255, 0)",
-        });
-    } else {
-        // If another browser, return 0
-        $("#explorer").hide();
-
-        $("#buttonwrapper,#cubewrap,#controltxt").show();
-        return false;
-    }
-}
-msieversion(); */
-
 // * 크기를 되돌렸을 때 생기는 오류 대비
 $(window).resize(function () {
     if (CurrentMenuValue == 1) {
@@ -78,7 +55,7 @@ $("#naviA").css({ color: CurrentColor });
 // ! 셋인터벌로 브라우저 속도 조절
 setInterval(function () {
     $(window).scroll(() => {
-        let browserY = $(document).scrollTop();
+        let browserY = $(document).scrollTop() + 350;
         let CurrentPageNum = 0;
         const page1Y = $("#box1").offset();
         const page2Y = $("#box2").offset();
@@ -88,15 +65,18 @@ setInterval(function () {
         const page6Y = $("#box6").offset();
         const page7Y = $("#box7").offset();
 
-        if (browserY <= page1Y.top) {
+        const circle_1 = document.querySelector("#circle1");
+        const circle_2 = document.querySelector("#circle2");
+        const circle_3 = document.querySelector("#circle3");
+        const circle_4 = document.querySelector("#circle4");
+
+        if (browserY < page2Y.top) {
             CurrentPageNum = 0;
             $(".menuDesign").css({ color: "white" });
             $("#gotoA").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviA").css({ color: CurrentColor });
-            $(".rotationImg").removeClass("rotating");
-            $(".rotationImg").removeClass("reverse_rotating");
-        } else if (browserY == page1Y.top && browserY == page2Y.top) {
+        } else if (browserY == page1Y.top && browserY < page2Y.top) {
             CurrentPageNum = 1;
             $(".menuDesign").css({ color: "white" });
             $("#gotoA").css({ color: CurrentColor });
@@ -104,14 +84,19 @@ setInterval(function () {
             $("#naviB").css({ color: CurrentColor });
             $(".rotationImg").removeClass("rotating");
             $(".rotationImg").removeClass("reverse_rotating");
-        } else if ((browserY > page2Y.top && browserY < page3Y.top) || browserY == page2Y.top) {
+        } else if ((browserY >= page2Y.top && browserY <= page3Y.top) || browserY == page2Y.top) {
             CurrentPageNum = 2;
             $(".menuDesign").css({ color: "white" });
             $("#gotoB").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviB").css({ color: CurrentColor });
             $(".rotationImg").addClass("rotating");
-        } else if ((browserY > page3Y.top && browserY < page4Y.top) || browserY == page3Y.top) {
+
+            circle_1.classList.remove("bingbing_active");
+            circle_2.classList.remove("bingbing_active");
+            circle_3.classList.remove("bingbing_active");
+            circle_4.classList.remove("bingbing_active");
+        } else if ((browserY >= page3Y.top && browserY <= page4Y.top) || browserY == page3Y.top) {
             CurrentPageNum = 3;
             $(".menuDesign").css({ color: "white" });
             $("#gotoC").css({ color: CurrentColor });
@@ -119,19 +104,29 @@ setInterval(function () {
             $("#naviC").css({ color: CurrentColor });
             $(".rotationImg").removeClass("rotating");
             $(".rotationImg").removeClass("reverse_rotating");
-        } else if ((browserY >= page4Y.top && browserY < page5Y.top) || browserY == page4Y.top) {
+
+            circle_1.classList.add("bingbing_active");
+            circle_2.classList.add("bingbing_active");
+            circle_3.classList.add("bingbing_active");
+            circle_4.classList.add("bingbing_active");
+        } else if ((browserY >= page4Y.top && browserY <= page5Y.top) || browserY == page4Y.top) {
             CurrentPageNum = 4;
             $(".menuDesign").css({ color: "white" });
             $("#gotoD").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviD").css({ color: CurrentColor });
-        } else if ((browserY >= page5Y.top && browserY < page6Y.top) || browserY == page5Y.top) {
+
+            circle_1.classList.remove("bingbing_active");
+            circle_2.classList.remove("bingbing_active");
+            circle_3.classList.remove("bingbing_active");
+            circle_4.classList.remove("bingbing_active");
+        } else if ((browserY >= page5Y.top && browserY <= page6Y.top) || browserY == page5Y.top) {
             CurrentPageNum = 5;
             $(".menuDesign").css({ color: "white" });
             $("#gotoE").css({ color: CurrentColor });
             $(".navimenu").css({ color: "white" });
             $("#naviE").css({ color: CurrentColor });
-        } else if ((browserY >= page6Y.top && browserY < page7Y.top) || browserY == page6Y.top) {
+        } else if ((browserY >= page6Y.top && browserY <= page7Y.top) || browserY == page6Y.top) {
             CurrentPageNum = 6;
             $(".menuDesign").css({ color: "white" });
             $("#gotoF").css({ color: CurrentColor });
