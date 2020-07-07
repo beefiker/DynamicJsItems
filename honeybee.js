@@ -245,7 +245,7 @@ rotateImg.addEventListener("click", () => {
 const paperItem = document.querySelector("#paperCanvas");
 
 paperItem.addEventListener("click", () => {
-    alert("asd");
+    alert("Paper");
 });
 
 paper.install(window);
@@ -283,7 +283,7 @@ var head = new Path.Ellipse({
 });
 var headphoneLine = new Path();
 headphoneLine.strokeColor = "dark";
-headphoneLine.strokeWidth = 5;
+headphoneLine.strokeWidth = 3;
 var start = new Point(155, 55);
 headphoneLine.moveTo(start);
 headphoneLine.lineTo(155, 150);
@@ -317,7 +317,7 @@ var mouth = new Path.Ellipse({
 
 mouth.removeSegment(1);
 var contact = new Group({
-    children: [headphoneLine, headphoneLeft, headphoneRight, headphoneTop, head, mouth, microPhone, eyeLeft, eyeRight],
+    children: [headphoneLine, headphoneTop, headphoneLeft, headphoneRight, head, mouth, microPhone, eyeLeft, eyeRight],
     applyMatrix: false,
 });
 if (window.matchMedia("(max-width: 700px)").matches) {
