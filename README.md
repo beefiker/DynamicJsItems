@@ -38,26 +38,31 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
     ```CSS
     .Btncontainer {
-    ;
-    ;
-    ;
-    ;
-    ;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        top: 0.46rem;
+        left: -0.3rem;
     }
     .bar1,
-    ,
-    {
-    ;
-    ;
-    ;
-    ;
-    ;
+    .bar2,
+    .bar3 {
+        width: 2.33rem;
+        height: 0.33rem;
+        background-color: var(--beeYellow);
+        margin: 6px 0;
+        transition: 0.2s;
     }
 
+    .change .bar1 {
+        transform: rotate(-45deg) translate(-9px, 6px);
     }
+    .change .bar2 {
+        opacity: 0;
     }
+    .change .bar3 {
+        transform: rotate(45deg) translate(-8px, -8px);
     }
-
     ```
 
     -   _JavaScript_
@@ -68,19 +73,25 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         switch (CurrentMenuValue) {
             case 0:
                 $(".Btncontainer").addClass("change");
+                $("#navi").animate({ left: 0 }, 200);
+                $("#Topmenu, #container").animate({ left: "300px" }, 200);
                 CurrentMenuValue = 1;
                 break;
             case 1:
                 $(".Btncontainer").removeClass("change");
+                $("#navi").animate({ left: "-300px" }, 200);
+                $("#Topmenu, #container").animate({ left: 0 }, 200);
                 CurrentMenuValue = 0;
                 break;
         }
-        if (CurrentMenuValue == 1) {    // 바뀐 햄버거버튼 말고, 다른 부분을 터치하더라도 닫히게 설정
-    {
-    ;
-    ;
-    ;
-    }
+        if (CurrentMenuValue == 1) {
+            $(".box").click(() => {
+                $(".Btncontainer").removeClass("change");
+                $("#navi").animate({ left: "-300px" }, 200);
+                $("#Topmenu, #container").animate({ left: 0 }, 200);
+                CurrentMenuValue = 0;
+            });
+        }
     });
     ```
 
@@ -116,14 +127,14 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
     ```CSS
     #cubewrap {
-    ;
-    ;
-    ;
-    ;
-    ;
-    ;
-    ;
-    /
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        align-items: center;
+        transform-style: preserve-3d;
+        transform: rotateX(-12deg) rotateY(-20deg); /* 살짝 기울여 3d 큐브 트랜지션을 확실히 볼 수 있게 */
     }
 
     #cube {
