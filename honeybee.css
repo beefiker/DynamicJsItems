@@ -316,14 +316,14 @@ body {
         display: inline-block;
         cursor: pointer;
         position: relative;
-        top: 7px;
-        left: -5px;
+        top: 0.46rem;
+        left: -0.3rem;
     }
     .bar1,
     .bar2,
     .bar3 {
-        width: 35px;
-        height: 5px;
+        width: 2.33rem;
+        height: 0.33rem;
         background-color: var(--beeYellow);
         margin: 6px 0;
         transition: 0.2s;
@@ -332,11 +332,9 @@ body {
     .change .bar1 {
         transform: rotate(-45deg) translate(-9px, 6px);
     }
-
     .change .bar2 {
         opacity: 0;
     }
-
     .change .bar3 {
         transform: rotate(45deg) translate(-8px, -8px);
     }
@@ -423,8 +421,7 @@ body {
     justify-items: center;
     align-items: center;
     transform-style: preserve-3d;
-    transform-origin: 100%;
-    transform: rotateX(-12deg) rotateY(-20deg);
+    transform: rotateX(-12deg) rotateY(-20deg); /* 살짝 기울여 3d 큐브 트랜지션을 확실히 볼 수 있게 */
 }
 
 #cube {
@@ -434,7 +431,7 @@ body {
     animation-iteration-count: infinite;
     animation-duration: 10s;
     transform-style: preserve-3d;
-    transform-origin: 100%;
+    transform-origin: 100% 100%;
 }
 #cube div {
     position: absolute;
@@ -486,7 +483,7 @@ body {
     min-height: 100vh;
 }
 
-.loader {
+.followingCircle {
     max-width: 15rem;
     width: 100%;
     height: auto;
@@ -507,26 +504,18 @@ circle {
 }
 circle:nth-of-type(1) {
     stroke-dasharray: 550px;
-}
-circle:nth-of-type(2) {
-    stroke-dasharray: 500px;
-}
-circle:nth-of-type(3) {
-    stroke-dasharray: 450px;
-}
-circle:nth-of-type(4) {
-    stroke-dasharray: 300px;
-}
-circle:nth-of-type(1) {
     animation-delay: -0.15s;
 }
 circle:nth-of-type(2) {
+    stroke-dasharray: 500px;
     animation-delay: -0.3s;
 }
 circle:nth-of-type(3) {
+    stroke-dasharray: 450px;
     animation-delay: -0.45s;
 }
 circle:nth-of-type(4) {
+    stroke-dasharray: 300px;
     animation-delay: -0.6s;
 }
 @keyframes bingbing {

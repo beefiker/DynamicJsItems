@@ -196,38 +196,38 @@ $("#cube > .cub6").css({
 	transform: "rotateX(-90deg) translateZ(0px) translateZ(" + wd + "px)"
 });
 
-$("#btngoto1").click(() => {
+$("#cubeBtn1").click(() => {
 	$("#cube").css({
 		transform: "rotateY(0deg)",
 		"transition-duration": "1.5s"
 	});
 });
 
-$("#btngoto2").click(() => {
+$("#cubeBtn2").click(() => {
 	$("#cube").css({
 		transform: "rotateY(-90deg)",
 		"transition-duration": "1.5s"
 	});
 });
-$("#btngoto3").click(() => {
+$("#cubeBtn3").click(() => {
 	$("#cube").css({
 		transform: "rotateX(-90deg) rotateY(-90deg)",
 		"transition-duration": "1.5s"
 	});
 });
-$("#btngoto4").click(() => {
+$("#cubeBtn4").click(() => {
 	$("#cube").css({
 		transform: " rotateY(180deg) rotateZ(90deg)",
 		"transition-duration": "1.5s"
 	});
 });
-$("#btngoto5").click(() => {
+$("#cubeBtn5").click(() => {
 	$("#cube").css({
 		transform: " rotateX(-90deg) rotateY(180deg) rotateZ(90deg)",
 		"transition-duration": "1.5s"
 	});
 });
-$("#btngoto6").click(() => {
+$("#cubeBtn6").click(() => {
 	$("#cube").css({
 		transform: " rotateX(90deg)",
 		"transition-duration": "1.5s"
