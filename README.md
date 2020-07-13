@@ -56,13 +56,13 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     }
 
     .change .bar1 {
-        transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px); // -45도 회전, x축:-9px, y축:6px 만큼 이동
     }
     .change .bar2 {
         opacity: 0;
     }
     .change .bar3 {
-        transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px); // 45도 회전, x:-8, y:-8 이동
     }
     ```
 
@@ -138,17 +138,17 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         justify-items: center;
         align-items: center;
         transform-style: preserve-3d;
-        transform: rotateX(-12deg) rotateY(-20deg); /* 살짝 기울여 3d 큐브 트랜지션을 확실히 볼 수 있게 */
+        transform: rotateX(-12deg) rotateY(-20deg); // 버튼을 누르지 않고도 3d큐브임을 인지시키기 위해 x축 -12도, y축 -20도 회전
     }
 
     #cube {
     	width: 50%;
     	height: 25%;
-        animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out; // 트랜지션의 진행 속도 조절. ease-in-out은 속도가 점점 증가하는 방식
         animation-iteration-count: infinite; /* 반복횟수는 무제한 */
         animation-duration: 10s;
-        transform-style: preserve-3d;
-        transform-origin: 100% 100%;
+        transform-style: preserve-3d; // 3D 공간에 배치
+        transform-origin: 100% 100%; // 회전시킬 축을 결정(right bottom). 기본값은 50% 50% (center)
     }
 
     #cube div {
@@ -157,6 +157,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         height: 0%;
     }
 
+    // 각 큐브들을 면마다 배치하기 위해 각도 설정
     #cube .cub1 {	transform: translatez(0);   }
     #cube .cub2 {	transform: rotatey(90deg) translatez(0);    }
     #cube .cub3 {	transform: rotatey(90deg) rotatex(90deg) translatez(0); }
@@ -169,6 +170,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         margin-top: -50%;
     }
 
+    // 2, 5번째는 0.7, 3, 6번째는 0.9, 1, 4번째는 기본(1) 투명도 적용
     #cube div:nth-child(3n + 2) {	opacity: 0.7;   }   /* 트랜지션을 확실하게 보여주기 위해*/
     #cube div:nth-child(3n + 3) {  	opacity: 0.9;   }  /* nth-child로 면마다 투명도를 조절 */
 
@@ -181,7 +183,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     /* translateZ는 args가 커질수록 멀어진다. */
 
     var wd = $("#cubewrap").width() / 2; /* 반응형 구현을 위한 사이징 */
-
+    // translateZ는 쉽게말해 사용자의 눈과 브라우저의 아이템과의 거리라고 할 수 있다. 값이 커질수록 아이템이 가까이 다가오기 때문에 크기도 커보이는 효과.
     $("#cube > .cub1").css({	transform: "translateZ(" + wd + "px)"   });
     $("#cube > .cub2").css({	transform: "rotateY(90deg) translateZ(" + wd + "px)"  });
     $("#cube > .cub3").css({	transform: "rotateY(90deg) rotateX(90deg) translateZ(" + wd + "px)" });
@@ -210,7 +212,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
         4번 버튼
         $("#cube").css({
-            transform: " rotateY(180deg) rotateZ(90deg)",
+            transform: " rotateY(180deg) rotateZ(90deg)", // rotateZ를 사용하면 2d방식의 rotate와 같음. (단순하게 사용자의 시점에서의 평면적인 회전)
             "transition-duration": "1.5s"
         });
 
@@ -240,6 +242,8 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
     ```css
     @keyframes rotating {
+        /*애니메이션을 재생할 각 프레임의 스타일을 정의 from(0%)에서 시작해서
+          to(100%) 속성에 설정한 스타일로 점차 바뀌며 재생*/
         from {
             transform: rotate(0deg);
         }
@@ -263,10 +267,10 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
     .rotating {
         animation: rotating 0.4s linear infinite;
-        transform-origin: center;
+        /*rotating이라는 키프레임을 0.4초마다 선형으로 무한반복*/
+        transform-origin: center; /*회전의 중심축은 중심으로 세팅*/
     }
     .reverse_rotating {
-        opacity: 1;
         width: 30%;
         animation: reverse_rotating 0.4s linear infinite;
         transform-origin: center;
@@ -281,6 +285,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     rotateImg.addEventListener("click", () => {
         // 클릭할때마다  클래스가 교차되게 토글을 부여함
         rotateImg.classList.toggle("rotating");
+        // args로 전달한 클래스명이 있으면 삭제, 없으면 추가
         rotateImg.classList.toggle("reverse_rotating");
     });
     ```
@@ -290,7 +295,10 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     -   _HTML_
 
     ```html
+     <!-- width:340px, height:340px로 정사각형 선언 -->
     <svg class="followingCircle" viewBox="0 0 340 340">
+        <!-- 원의 cx와 cy(x,y축의 좌표)는 170으로 viewBox의 340에 맞춰 정가운데에 만들고,
+            반지름의 길이를 각각 다르게 설정. -->
         <circle id="circle1" class="circles" cx="170" cy="170" r="160" stroke="#FDF68C" />
         <circle id="circle2" class="circles" cx="170" cy="170" r="135" stroke="#F4CD2A" />
         <circle id="circle3" class="circles" cx="170" cy="170" r="110" stroke="#EDA323" />
@@ -306,17 +314,17 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         max-width: 15rem;
         width: 100%;
         height: auto;
-        stroke-linecap: round;
+        stroke-linecap: round; /* svg에 관한 css로 선 끝을 동그랗게 처리 */
     }
 
     circle {
         fill: none;
-        stroke-width: 4;
+        stroke-width: 4; /* 두께를 4로 조절 */
     }
 
     circle:nth-of-type(1) {
-        stroke-dasharray: 550px;
-        animation-delay: -0.15s;
+        stroke-dasharray: 550px; /* dasharray로 원의 선을 다 채우는 것이 아니라 값만큼만 설정 */
+        animation-delay: -0.15s; /* 애니메이션마다 딜레이를 부여해 각각 시작시간을 다르게 세팅 */
     }
     circle:nth-of-type(2) {
         stroke-dasharray: 500px;
@@ -332,6 +340,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     }
 
     @keyframes bingbing {
+        /* 움직임을 위한 키프레임 세팅 */
         50% {
             transform: rotate(360deg);
         }
@@ -342,8 +351,9 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         animation-duration: 4s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
-        transform-origin: 170px 170px;
-        will-change: transform;
+        transform-origin: 170px 170px; /* viewBox의 중심인 170,170을 이용해 회전축 설정*/
+        /* will-change: transform; 페이지의 반응성을 증가시키기 위해
+        넣으려 했으나 자료를 찾아본 결과, 복잡한 렌더링을 불러올 수 있어서 주석처리 */
     }
     ```
 
@@ -359,6 +369,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 ### 🍔햄버거 메뉴를 클릭/터치하여 메뉴가 등장했을 때 <br> 브라우저 크기를 강제적으로 늘렸을 경우의 오류 대비
 
 ```js
+// 이미 브라우저에서 메뉴가 열려있을 때 resize가 감지되어 그 값이 800보다 커지면
 $(window).resize(function () {
     if (CurrentMenuValue == 1) {
         if ($(window).width() >= 800) {
@@ -386,7 +397,7 @@ logo.addEventListener("click", () => {
 **동작을 하는 아이템들은 <br>_사용자가 인근 컨텐츠_ 를 보고있을때 실행**
 
 ```js
-setInterval(function () {
+setInterval(() => {
     $(window).scroll(() => {
         let browserY = $(document).scrollTop() + 350;
         let CurrentPageNum = 0;
@@ -428,13 +439,13 @@ setInterval(function () {
             circle_4.classList.remove("bingbing_active");
         }
     });
-}, 500);
+}, 200);
 ```
 
 ## 🎧 PaperJS
 
 ```js
-const beeYellow = "#f9c901";
+const beeYellow = "#f9c901"; // 자주 쓸 색이라 귀찮아서 상수로 등록
 const beeDark = "#242424";
 
 reversePaperColor = () => {
@@ -549,7 +560,7 @@ var contact = new Group({
 });
 
 if (window.matchMedia("(max-width: 700px)").matches) {
-    contact.scaling = 0.25;
+    contact.scaling = 0.2;
 } else {
     contact.scaling = 0.3;
 }

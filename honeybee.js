@@ -62,7 +62,7 @@ $("#gotoA").css({ color: CurrentColor });
 $("#naviA").css({ color: CurrentColor });
 
 // ! 셋인터벌로 브라우저 속도 조절
-setInterval(function () {
+setInterval(() => {
     $(window).scroll(() => {
         let browserY = $(document).scrollTop() + 350;
         let CurrentPageNum = 0;
@@ -149,7 +149,7 @@ setInterval(function () {
             $("#naviG").css({ color: CurrentColor });
         }
     });
-}, 500);
+}, 200);
 
 let CurrentMenuValue = 0; // * 메뉴 숨겨있을 때 0, 클릭해서 나타냈을 때 1
 $("#menuBtn").click(() => {
@@ -357,7 +357,7 @@ var contact = new Group({
     applyMatrix: false,
 });
 if (window.matchMedia("(max-width: 700px)").matches) {
-    contact.scaling = 0.25;
+    contact.scaling = 0.2;
 } else {
     contact.scaling = 0.3;
 }
