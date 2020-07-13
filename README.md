@@ -4,13 +4,13 @@ _transform, transition, animation etc..._ 적용한 기능 및 아이템 소개
 
 _Apply all fonts on a 15px basis. (15px/rem)_
 
-## Apply Viewport
+## 📱 Apply Viewport
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
-## Apply MediaQuery
+## 🛠 Apply MediaQuery
 
 ```CSS
 @media (min-width: 1300px) { }
@@ -18,7 +18,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 @media (max-width: 700px) { }
 ```
 
-# Contents and Introduction
+# 𝌞 Contents and Introduction
 
 -   **🍔 Hamburger Menu 🍔**
 
@@ -262,13 +262,13 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     }
 
     .rotating {
-        animation: rotating 1s linear infinite;
+        animation: rotating 0.4s linear infinite;
         transform-origin: center;
     }
     .reverse_rotating {
         opacity: 1;
         width: 30%;
-        animation: reverse_rotating 1s linear infinite;
+        animation: reverse_rotating 0.4s linear infinite;
         transform-origin: center;
     }
     ```
@@ -351,6 +351,8 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         -   🙅🏻‍♀️ No JavaScript
 
 ## 그 외의 것들
+
+---
 
 ### 🍔햄버거 메뉴를 클릭/터치하여 메뉴가 등장했을 때 <br> 브라우저 크기를 강제적으로 늘렸을 경우의 오류 대비
 

@@ -375,7 +375,7 @@ body {
     }
 }
 .rotating {
-    animation: rotating 1s linear infinite;
+    animation: rotating 0.4s linear infinite;
     transform-origin: center;
 }
 .rotationImg {
@@ -384,7 +384,7 @@ body {
 .reverse_rotating {
     opacity: 1;
     width: 30%;
-    animation: reverse_rotating 1s linear infinite;
+    animation: reverse_rotating 0.4s linear infinite;
     transform-origin: center;
 }
 
