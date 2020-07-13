@@ -101,25 +101,25 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
     ```HTML
     <section id="3Dcube">
-    <ul id="buttonwrapper">
-        <li id="cubeBtn1">1</li>
-        <li id="cubeBtn2">2</li>
-        <li id="cubeBtn3">3</li>
-        <li id="cubeBtn4">4</li>
-        <li id="cubeBtn5">5</li>
-        <li id="cubeBtn6">6</li>
-    </ul>
+        <ul id="buttonwrapper">
+            <li id="cubeBtn1">1</li>
+            <li id="cubeBtn2">2</li>
+            <li id="cubeBtn3">3</li>
+            <li id="cubeBtn4">4</li>
+            <li id="cubeBtn5">5</li>
+            <li id="cubeBtn6">6</li>
+        </ul>
 
-    <div id="cubewrap">
-        <div id="cube">
-            <div class="cub1"><img id="cubeimg" src="images/html_black.png" /></div>
-            <div class="cub2"><img id="cubeimg" src="images/JAVA.png" /></div>
-            <div class="cub3"><img id="cubeimg" src="images/Python.png" /></div>
-            <div class="cub4"><img id="cubeimg" src="images/webui.png" /></div>
-            <div class="cub5"><img id="cubeimg" src="images/php.png" /></div>
-            <div class="cub6"><img id="cubeimg" src="images/DB_green.png" /></div>
+        <div id="cubewrap">
+            <div id="cube">
+                <div class="cub1"><img id="cubeimg" src="images/html_black.png" /></div>
+                <div class="cub2"><img id="cubeimg" src="images/JAVA.png" /></div>
+                <div class="cub3"><img id="cubeimg" src="images/Python.png" /></div>
+                <div class="cub4"><img id="cubeimg" src="images/webui.png" /></div>
+                <div class="cub5"><img id="cubeimg" src="images/php.png" /></div>
+                <div class="cub6"><img id="cubeimg" src="images/DB_green.png" /></div>
+            </div>
         </div>
-    </div>
     </section>
     ```
 
@@ -228,9 +228,9 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     -   _HTML_
 
     ```html
-    <div id="box2" class="box">
-        <img src="images/rotation.png" class="rotationImg" alt="bee" />
-    </div>
+    
+    <img src="images/rotation.png" class="rotationImg" alt="bee" />
+    
     ```
 
     -   _CSS_
