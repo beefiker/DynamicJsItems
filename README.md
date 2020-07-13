@@ -350,6 +350,8 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     -   _JavaScript_
         -   🙅🏻‍♀️ No JavaScript
 
+---
+
 ## 그 외의 것들
 
 ---
@@ -429,39 +431,74 @@ setInterval(function () {
 }, 500);
 ```
 
-## PaperJS 🎧
+## 🎧 PaperJS
 
 ```js
-const paperItem = document.querySelector("#paperCanvas");
+const beeYellow = "#f9c901";
+const beeDark = "#242424";
 
+reversePaperColor = () => {
+    paper_hair_ItemList = [headphoneLeft, headphoneRight, headphoneTop];
+    paper_face_ItemList = [eyeLeft, eyeRight, mouth, microPhone];
+    if (reversing == false) {
+        reversing = true;
+        for (i = 0; i < paper_hair_ItemList.length; i++) {
+            paper_hair_ItemList[i].fillColor = beeDark;
+            paper_hair_ItemList[i].strokeColor = beeYellow;
+        }
+        headphoneLine.strokeColor = beeYellow;
+        head.fillColor = beeYellow;
+
+        for (i = 0; i < paper_face_ItemList.length; i++) {
+            paper_face_ItemList[i].fillColor = beeDark;
+            paper_face_ItemList[i].strokeColor = beeDark;
+        }
+    } else if (reversing == true) {
+        reversing = false;
+        for (i = 0; i < paper_hair_ItemList.length; i++) {
+            paper_hair_ItemList[i].fillColor = beeYellow;
+            paper_hair_ItemList[i].strokeColor = beeDark;
+        }
+        headphoneLine.strokeColor = beeDark;
+        head.fillColor = beeDark;
+
+        for (i = 0; i < paper_face_ItemList.length; i++) {
+            paper_face_ItemList[i].fillColor = beeYellow;
+            paper_face_ItemList[i].strokeColor = beeYellow;
+        }
+    }
+};
+
+const paperItem = document.querySelector("#paperCanvas");
+let reversing = false;
 paperItem.addEventListener("click", () => {
-    alert("Paper");
+    reversePaperColor();
 });
 
 paper.install(window);
-
 var canvas = document.getElementById("paperCanvas");
+
 paper.setup(canvas);
 
 var headphoneLeft = new Path.Ellipse({
     center: [-30, 50],
     radius: [50, 50],
-    fillColor: "#f9c901",
-    strokeColor: "#242424",
+    fillColor: beeYellow,
+    strokeColor: beeDark,
     strokeWidth: 2,
 });
 var headphoneRight = new Path.Ellipse({
     center: [130, 50],
     radius: [50, 50],
-    fillColor: "#f9c901",
-    strokeColor: "#242424",
+    fillColor: beeYellow,
+    strokeColor: beeDark,
     strokeWidth: 2,
 });
 var headphoneTop = new Path.Ellipse({
     center: [50, 30],
     radius: [100, 100],
-    fillColor: "#f9c901",
-    strokeColor: "#242424",
+    fillColor: beeYellow,
+    strokeColor: beeDark,
     strokeWidth: 2,
 });
 headphoneTop.removeSegment(3);
@@ -469,10 +506,10 @@ headphoneTop.removeSegment(3);
 var head = new Path.Ellipse({
     center: [50, 50],
     radius: [100, 100],
-    fillColor: "#242424",
+    fillColor: beeDark,
 });
 var headphoneLine = new Path();
-headphoneLine.strokeColor = "dark";
+headphoneLine.strokeColor = beeDark;
 headphoneLine.strokeWidth = 3;
 var start = new Point(155, 55);
 headphoneLine.moveTo(start);
@@ -482,19 +519,19 @@ headphoneLine.lineTo(75, 150);
 var microPhone = new Path.Ellipse({
     center: [75, 150],
     radius: [15, 10],
-    fillColor: "#f9c901",
-    strokeColor: "#242424",
+    fillColor: beeYellow,
+    strokeColor: beeDark,
     strokeWidth: 2,
 });
 
 var eyeLeft = new Path();
-eyeLeft.strokeColor = "#f9c901";
+eyeLeft.strokeColor = beeYellow;
 eyeLeft.strokeWidth = 15;
 eyeLeft.moveTo(10, 15);
 eyeLeft.lineTo(10, 55);
 
 var eyeRight = new Path();
-eyeRight.strokeColor = "#f9c901";
+eyeRight.strokeColor = beeYellow;
 eyeRight.strokeWidth = 15;
 eyeRight.moveTo(90, 15);
 eyeRight.lineTo(90, 55);
@@ -502,7 +539,7 @@ eyeRight.lineTo(90, 55);
 var mouth = new Path.Ellipse({
     center: [50, 90],
     radius: [50, 50],
-    fillColor: "#f9c901",
+    fillColor: beeYellow,
 });
 
 mouth.removeSegment(1);
@@ -510,6 +547,7 @@ var contact = new Group({
     children: [headphoneLine, headphoneTop, headphoneLeft, headphoneRight, head, mouth, microPhone, eyeLeft, eyeRight],
     applyMatrix: false,
 });
+
 if (window.matchMedia("(max-width: 700px)").matches) {
     contact.scaling = 0.25;
 } else {
