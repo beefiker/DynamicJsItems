@@ -1,4 +1,4 @@
-# Web UI & UX Final Project
+# 🐝 Web UI & UX Final Project 🐝
 
 _transform, transition, animation etc..._ 적용한 기능 및 아이템 소개
 
@@ -20,7 +20,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
 # Contents and Introduction
 
--   **Hamburger Menu**
+-   **🍔 Hamburger Menu 🍔**
 
     -   _HTML_
 
@@ -44,6 +44,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         top: 0.46rem;
         left: -0.3rem;
     }
+
     .bar1,
     .bar2,
     .bar3 {
@@ -69,6 +70,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
     ```js
     let CurrentMenuValue = 0; // * 메뉴 숨겨있을 때 0, 클릭해서 나타냈을 때 1
+
     $("#menuBtn").click(() => {
         switch (CurrentMenuValue) {
             case 0:
@@ -95,31 +97,33 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     });
     ```
 
-*   **Cube**
+*   **🔲 Cube 🔲**
 
     -   _HTML_
 
     ```HTML
     <section id="3Dcube">
-    <ul id="buttonwrapper">
-        <li id="cubeBtn1">1</li>
-        <li id="cubeBtn2">2</li>
-        <li id="cubeBtn3">3</li>
-        <li id="cubeBtn4">4</li>
-        <li id="cubeBtn5">5</li>
-        <li id="cubeBtn6">6</li>
-    </ul>
 
-    <div id="cubewrap">
-        <div id="cube">
-            <div class="cub1"><img id="cubeimg" src="images/html_black.png" /></div>
-            <div class="cub2"><img id="cubeimg" src="images/JAVA.png" /></div>
-            <div class="cub3"><img id="cubeimg" src="images/Python.png" /></div>
-            <div class="cub4"><img id="cubeimg" src="images/webui.png" /></div>
-            <div class="cub5"><img id="cubeimg" src="images/php.png" /></div>
-            <div class="cub6"><img id="cubeimg" src="images/DB_green.png" /></div>
+        <ul id="buttonwrapper">
+            <li id="cubeBtn1">1</li>
+            <li id="cubeBtn2">2</li>
+            <li id="cubeBtn3">3</li>
+            <li id="cubeBtn4">4</li>
+            <li id="cubeBtn5">5</li>
+            <li id="cubeBtn6">6</li>
+        </ul>
+
+        <div id="cubewrap">
+            <div id="cube">
+                <div class="cub1"><img id="cubeimg" src="images/html_black.png" /></div>
+                <div class="cub2"><img id="cubeimg" src="images/JAVA.png" /></div>
+                <div class="cub3"><img id="cubeimg" src="images/Python.png" /></div>
+                <div class="cub4"><img id="cubeimg" src="images/webui.png" /></div>
+                <div class="cub5"><img id="cubeimg" src="images/php.png" /></div>
+                <div class="cub6"><img id="cubeimg" src="images/DB_green.png" /></div>
+            </div>
         </div>
-    </div>
+
     </section>
     ```
 
@@ -146,6 +150,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         transform-style: preserve-3d;
         transform-origin: 100% 100%;
     }
+
     #cube div {
         position: absolute;
         width: 200%;
@@ -223,14 +228,12 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     });
     ```
 
-*   **Rotate**
+*   **↻ Rotate ↻**
 
     -   _HTML_
 
     ```html
-    <div id="box2" class="box">
-        <img src="images/rotation.png" class="rotationImg" alt="bee" />
-    </div>
+    <img src="images/rotation.png" class="rotationImg" alt="bee" />
     ```
 
     -   _CSS_
@@ -253,12 +256,14 @@ _Apply all fonts on a 15px basis. (15px/rem)_
             transform: rotate(0deg);
         }
     }
+
+    .rotationImg {
+        width: 30%;
+    }
+
     .rotating {
         animation: rotating 1s linear infinite;
         transform-origin: center;
-    }
-    .rotationImg {
-        width: 30%;
     }
     .reverse_rotating {
         opacity: 1;
@@ -280,7 +285,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     });
     ```
 
-*   **BingBing Follow**
+*   **🌀 BingBing Follow 🌀**
 
     -   _HTML_
 
@@ -298,6 +303,10 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
     ```css
     .followingCircle {
+        max-width: 15rem;
+        width: 100%;
+        height: auto;
+        stroke-linecap: round;
     }
 
     circle {
@@ -362,6 +371,7 @@ $(window).resize(function () {
 
 ```js
 const logo = document.querySelector("#logoImg");
+
 logo.addEventListener("click", () => {
     window.scrollTo({ top: document.querySelector("#box1").offsetTop, behavior: "smooth" });
 });
