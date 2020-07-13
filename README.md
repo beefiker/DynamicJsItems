@@ -285,7 +285,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     });
     ```
 
-*   **🌀 BingBing Follow 🌀**
+*   **🌀 Following circles 🌀**
 
     -   _HTML_
 
@@ -348,11 +348,11 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     ```
 
     -   _JavaScript_
-        -   No JavaScript
+        -   🙅🏻‍♀️ No JavaScript
 
 ## 그 외의 것들
 
-### 햄버거 메뉴를 클릭/터치하여 메뉴가 등장했을 때 <br> 브라우저 크기를 강제적으로 늘렸을 경우의 오류 대비
+### 🍔햄버거 메뉴를 클릭/터치하여 메뉴가 등장했을 때 <br> 브라우저 크기를 강제적으로 늘렸을 경우의 오류 대비
 
 ```js
 $(window).resize(function () {
@@ -367,7 +367,7 @@ $(window).resize(function () {
 });
 ```
 
-### window.scrollTo는 로고이미지에 적용
+### ⬆️ window.scrollTo는 로고이미지에 적용
 
 ```js
 const logo = document.querySelector("#logoImg");
@@ -377,9 +377,9 @@ logo.addEventListener("click", () => {
 });
 ```
 
-### 웹 성능 저하 방지
+### ⛔️ 웹 성능 저하 방지
 
-**동작을 하는 아이템들은 <br>사용자가 인근 컨텐츠를 보고있을때 실행**
+**동작을 하는 아이템들은 <br>_사용자가 인근 컨텐츠_ 를 보고있을때 실행**
 
 ```js
 setInterval(function () {
@@ -425,4 +425,92 @@ setInterval(function () {
         }
     });
 }, 500);
+```
+
+## PaperJS 🎧
+
+```js
+const paperItem = document.querySelector("#paperCanvas");
+
+paperItem.addEventListener("click", () => {
+    alert("Paper");
+});
+
+paper.install(window);
+
+var canvas = document.getElementById("paperCanvas");
+paper.setup(canvas);
+
+var headphoneLeft = new Path.Ellipse({
+    center: [-30, 50],
+    radius: [50, 50],
+    fillColor: "#f9c901",
+    strokeColor: "#242424",
+    strokeWidth: 2,
+});
+var headphoneRight = new Path.Ellipse({
+    center: [130, 50],
+    radius: [50, 50],
+    fillColor: "#f9c901",
+    strokeColor: "#242424",
+    strokeWidth: 2,
+});
+var headphoneTop = new Path.Ellipse({
+    center: [50, 30],
+    radius: [100, 100],
+    fillColor: "#f9c901",
+    strokeColor: "#242424",
+    strokeWidth: 2,
+});
+headphoneTop.removeSegment(3);
+
+var head = new Path.Ellipse({
+    center: [50, 50],
+    radius: [100, 100],
+    fillColor: "#242424",
+});
+var headphoneLine = new Path();
+headphoneLine.strokeColor = "dark";
+headphoneLine.strokeWidth = 3;
+var start = new Point(155, 55);
+headphoneLine.moveTo(start);
+headphoneLine.lineTo(155, 150);
+headphoneLine.lineTo(75, 150);
+
+var microPhone = new Path.Ellipse({
+    center: [75, 150],
+    radius: [15, 10],
+    fillColor: "#f9c901",
+    strokeColor: "#242424",
+    strokeWidth: 2,
+});
+
+var eyeLeft = new Path();
+eyeLeft.strokeColor = "#f9c901";
+eyeLeft.strokeWidth = 15;
+eyeLeft.moveTo(10, 15);
+eyeLeft.lineTo(10, 55);
+
+var eyeRight = new Path();
+eyeRight.strokeColor = "#f9c901";
+eyeRight.strokeWidth = 15;
+eyeRight.moveTo(90, 15);
+eyeRight.lineTo(90, 55);
+
+var mouth = new Path.Ellipse({
+    center: [50, 90],
+    radius: [50, 50],
+    fillColor: "#f9c901",
+});
+
+mouth.removeSegment(1);
+var contact = new Group({
+    children: [headphoneLine, headphoneTop, headphoneLeft, headphoneRight, head, mouth, microPhone, eyeLeft, eyeRight],
+    applyMatrix: false,
+});
+if (window.matchMedia("(max-width: 700px)").matches) {
+    contact.scaling = 0.25;
+} else {
+    contact.scaling = 0.3;
+}
 ```
