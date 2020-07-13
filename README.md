@@ -56,13 +56,15 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     }
 
     .change .bar1 {
-        transform: rotate(-45deg) translate(-9px, 6px); // -45도 회전, x축:-9px, y축:6px 만큼 이동
+        transform: rotate(-45deg) translate(-9px, 6px);
+        /* -45도 회전, x축:-9px, y축:6px 만큼 이동 */
     }
     .change .bar2 {
         opacity: 0;
     }
     .change .bar3 {
-        transform: rotate(45deg) translate(-8px, -8px); // 45도 회전, x:-8, y:-8 이동
+        transform: rotate(45deg) translate(-8px, -8px);
+        /* 45도 회전, x:-8, y:-8 이동 */
     }
     ```
 
@@ -138,17 +140,20 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         justify-items: center;
         align-items: center;
         transform-style: preserve-3d;
-        transform: rotateX(-12deg) rotateY(-20deg); // 버튼을 누르지 않고도 3d큐브임을 인지시키기 위해 x축 -12도, y축 -20도 회전
+        transform: rotateX(-12deg) rotateY(-20deg);
+        /* 버튼을 누르지 않고도 3d큐브임을 인지시키기 위해 x축 -12도, y축 -20도 회전 */
     }
 
     #cube {
     	width: 50%;
     	height: 25%;
-        animation-timing-function: ease-in-out; // 트랜지션의 진행 속도 조절. ease-in-out은 속도가 점점 증가하는 방식
+        animation-timing-function: ease-in-out;
+        /* 트랜지션의 진행 속도 조절. ease-in-out은 속도가 점점 증가하는 방식 */
         animation-iteration-count: infinite; /* 반복횟수는 무제한 */
         animation-duration: 10s;
-        transform-style: preserve-3d; // 3D 공간에 배치
-        transform-origin: 100% 100%; // 회전시킬 축을 결정(right bottom). 기본값은 50% 50% (center)
+        transform-style: preserve-3d; /* 3D 공간에 배치 */
+        transform-origin: 100% 100%;
+        /* 회전시킬 축을 결정(right bottom). 기본값은 50% 50% (center) */
     }
 
     #cube div {
@@ -157,7 +162,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         height: 0%;
     }
 
-    // 각 큐브들을 면마다 배치하기 위해 각도 설정
+    /* 각 큐브들을 면마다 배치하기 위해 각도 설정 */
     #cube .cub1 {	transform: translatez(0);   }
     #cube .cub2 {	transform: rotatey(90deg) translatez(0);    }
     #cube .cub3 {	transform: rotatey(90deg) rotatex(90deg) translatez(0); }
@@ -170,7 +175,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         margin-top: -50%;
     }
 
-    // 2, 5번째는 0.7, 3, 6번째는 0.9, 1, 4번째는 기본(1) 투명도 적용
+    /* 2, 5번째는 0.7, 3, 6번째는 0.9, 1, 4번째는 기본(1) 투명도 적용 */
     #cube div:nth-child(3n + 2) {	opacity: 0.7;   }   /* 트랜지션을 확실하게 보여주기 위해*/
     #cube div:nth-child(3n + 3) {  	opacity: 0.9;   }  /* nth-child로 면마다 투명도를 조절 */
 
