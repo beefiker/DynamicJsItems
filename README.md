@@ -339,7 +339,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     ```
 
     -   _JavaScript_
-        No JavaScript
+        - No JavaScript
 
 ## 그 외의 것들
 
