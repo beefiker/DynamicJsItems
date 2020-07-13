@@ -44,6 +44,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         top: 0.46rem;
         left: -0.3rem;
     }
+
     .bar1,
     .bar2,
     .bar3 {
@@ -69,6 +70,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
     ```js
     let CurrentMenuValue = 0; // * 메뉴 숨겨있을 때 0, 클릭해서 나타냈을 때 1
+
     $("#menuBtn").click(() => {
         switch (CurrentMenuValue) {
             case 0:
@@ -101,6 +103,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
     ```HTML
     <section id="3Dcube">
+
         <ul id="buttonwrapper">
             <li id="cubeBtn1">1</li>
             <li id="cubeBtn2">2</li>
@@ -120,6 +123,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
                 <div class="cub6"><img id="cubeimg" src="images/DB_green.png" /></div>
             </div>
         </div>
+
     </section>
     ```
 
@@ -146,6 +150,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
         transform-style: preserve-3d;
         transform-origin: 100% 100%;
     }
+
     #cube div {
         position: absolute;
         width: 200%;
@@ -253,12 +258,12 @@ _Apply all fonts on a 15px basis. (15px/rem)_
             transform: rotate(0deg);
         }
     }
+
+    .rotationImg { width: 30%; }
+
     .rotating {
         animation: rotating 1s linear infinite;
         transform-origin: center;
-    }
-    .rotationImg {
-        width: 30%;
     }
     .reverse_rotating {
         opacity: 1;
@@ -297,7 +302,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
     -   _CSS_
 
     ```css
-    .followingCircle {
+    .followingCircle { 수정 필요
     }
 
     circle {
@@ -347,6 +352,7 @@ _Apply all fonts on a 15px basis. (15px/rem)_
 
 ```js
 $(window).resize(function () {
+
     if (CurrentMenuValue == 1) {
         if ($(window).width() >= 800) {
             $("#navi").animate({ left: "-300px" }, 200);
@@ -355,6 +361,7 @@ $(window).resize(function () {
             CurrentMenuValue = 0;
         }
     }
+
 });
 ```
 
@@ -373,6 +380,7 @@ logo.addEventListener("click", () => {
 
 ```js
 setInterval(function () {
+
     $(window).scroll(() => {
         let browserY = $(document).scrollTop() + 350;
         let CurrentPageNum = 0;
@@ -414,5 +422,6 @@ setInterval(function () {
             circle_4.classList.remove("bingbing_active");
         }
     });
+
 }, 500);
 ```
